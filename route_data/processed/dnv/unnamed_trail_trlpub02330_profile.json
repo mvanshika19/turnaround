@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB02330",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB02330"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 105.4,
+  "tobler_moving_time_min": 1.5,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.988408,
+      "latitude": 49.314228,
+      "elevation_m": 75.6,
+      "smoothed_elevation_m": 80.8
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9881943,
+      "latitude": 49.314633,
+      "elevation_m": 81.4,
+      "smoothed_elevation_m": 82.0
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9881751,
+      "latitude": 49.3150825,
+      "elevation_m": 85.3,
+      "smoothed_elevation_m": 82.0
+    },
+    {
+      "distance_m": 105.4,
+      "longitude": -122.988173,
+      "latitude": 49.3151314,
+      "elevation_m": 85.7,
+      "smoothed_elevation_m": 84.1
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.2,
+      "slope": 0.0248,
+      "tobler_speed_kmh": 4.62,
+      "time_min": 0.65
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 105.4,
+      "distance_m": 5.4,
+      "elevation_change_m": 2.1,
+      "slope": 0.3909,
+      "tobler_speed_kmh": 1.28,
+      "time_min": 0.25
+    }
+  ]
+}

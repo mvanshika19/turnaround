@@ -1,0 +1,61 @@
+{
+  "trail": "SEYMOUR GOLF",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00549"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 58.4,
+  "tobler_moving_time_min": 0.7,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.963998,
+      "latitude": 49.309851,
+      "elevation_m": 74.5,
+      "smoothed_elevation_m": 74.3
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9637047,
+      "latitude": 49.3094559,
+      "elevation_m": 74.0,
+      "smoothed_elevation_m": 74.3
+    },
+    {
+      "distance_m": 58.4,
+      "longitude": -122.9636561,
+      "latitude": 49.3093877,
+      "elevation_m": 74.3,
+      "smoothed_elevation_m": 74.3
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 58.4,
+      "distance_m": 8.4,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.1
+    }
+  ]
+}

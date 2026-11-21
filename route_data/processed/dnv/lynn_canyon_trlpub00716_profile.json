@@ -1,0 +1,456 @@
+{
+  "trail": "LYNN CANYON",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB04059",
+    "TRLPUB03939",
+    "TRLPUB04058",
+    "TRLPUB04057",
+    "TRLPUB04056",
+    "TRLPUB04055",
+    "TRLPUB04054",
+    "TRLPUB04053",
+    "TRLPUB04052",
+    "TRLPUB03940",
+    "TRLPUB00716",
+    "TRLPUB03941"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 1277.0,
+  "tobler_moving_time_min": 15.9,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0224485,
+      "latitude": 49.3358843,
+      "elevation_m": 144.7,
+      "smoothed_elevation_m": 142.1
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.021788,
+      "latitude": 49.3359227,
+      "elevation_m": 140.7,
+      "smoothed_elevation_m": 140.6
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.0214146,
+      "latitude": 49.3362773,
+      "elevation_m": 141.0,
+      "smoothed_elevation_m": 139.9
+    },
+    {
+      "distance_m": 150.0,
+      "longitude": -123.0209045,
+      "latitude": 49.3365722,
+      "elevation_m": 136.0,
+      "smoothed_elevation_m": 137.1
+    },
+    {
+      "distance_m": 200.0,
+      "longitude": -123.0203114,
+      "latitude": 49.3367988,
+      "elevation_m": 136.8,
+      "smoothed_elevation_m": 135.0
+    },
+    {
+      "distance_m": 250.0,
+      "longitude": -123.0196423,
+      "latitude": 49.3368844,
+      "elevation_m": 131.2,
+      "smoothed_elevation_m": 132.5
+    },
+    {
+      "distance_m": 300.0,
+      "longitude": -123.018968,
+      "latitude": 49.3367942,
+      "elevation_m": 129.8,
+      "smoothed_elevation_m": 130.5
+    },
+    {
+      "distance_m": 350.0,
+      "longitude": -123.0183111,
+      "latitude": 49.3366601,
+      "elevation_m": 128.9,
+      "smoothed_elevation_m": 127.9
+    },
+    {
+      "distance_m": 400.0,
+      "longitude": -123.0176697,
+      "latitude": 49.3364983,
+      "elevation_m": 126.0,
+      "smoothed_elevation_m": 125.6
+    },
+    {
+      "distance_m": 450.0,
+      "longitude": -123.0171025,
+      "latitude": 49.3366852,
+      "elevation_m": 123.8,
+      "smoothed_elevation_m": 123.5
+    },
+    {
+      "distance_m": 500.0,
+      "longitude": -123.0172704,
+      "latitude": 49.3371107,
+      "elevation_m": 119.6,
+      "smoothed_elevation_m": 122.4
+    },
+    {
+      "distance_m": 550.0,
+      "longitude": -123.0176318,
+      "latitude": 49.3374917,
+      "elevation_m": 119.5,
+      "smoothed_elevation_m": 122.5
+    },
+    {
+      "distance_m": 600.0,
+      "longitude": -123.0182741,
+      "latitude": 49.3375267,
+      "elevation_m": 123.1,
+      "smoothed_elevation_m": 124.1
+    },
+    {
+      "distance_m": 650.0,
+      "longitude": -123.0189476,
+      "latitude": 49.3374427,
+      "elevation_m": 126.6,
+      "smoothed_elevation_m": 127.2
+    },
+    {
+      "distance_m": 700.0,
+      "longitude": -123.0194504,
+      "latitude": 49.3377212,
+      "elevation_m": 131.9,
+      "smoothed_elevation_m": 130.3
+    },
+    {
+      "distance_m": 750.0,
+      "longitude": -123.0194501,
+      "latitude": 49.3381583,
+      "elevation_m": 134.8,
+      "smoothed_elevation_m": 133.6
+    },
+    {
+      "distance_m": 800.0,
+      "longitude": -123.0193316,
+      "latitude": 49.3386011,
+      "elevation_m": 135.3,
+      "smoothed_elevation_m": 136.9
+    },
+    {
+      "distance_m": 850.0,
+      "longitude": -123.0193789,
+      "latitude": 49.3390458,
+      "elevation_m": 139.5,
+      "smoothed_elevation_m": 139.6
+    },
+    {
+      "distance_m": 900.0,
+      "longitude": -123.0194361,
+      "latitude": 49.339484,
+      "elevation_m": 143.1,
+      "smoothed_elevation_m": 142.2
+    },
+    {
+      "distance_m": 950.0,
+      "longitude": -123.0191519,
+      "latitude": 49.3398895,
+      "elevation_m": 145.1,
+      "smoothed_elevation_m": 145.0
+    },
+    {
+      "distance_m": 1000.0,
+      "longitude": -123.0190154,
+      "latitude": 49.3403289,
+      "elevation_m": 147.7,
+      "smoothed_elevation_m": 147.4
+    },
+    {
+      "distance_m": 1050.0,
+      "longitude": -123.0189029,
+      "latitude": 49.3407725,
+      "elevation_m": 149.7,
+      "smoothed_elevation_m": 148.7
+    },
+    {
+      "distance_m": 1100.0,
+      "longitude": -123.0188095,
+      "latitude": 49.341218,
+      "elevation_m": 151.5,
+      "smoothed_elevation_m": 149.4
+    },
+    {
+      "distance_m": 1150.0,
+      "longitude": -123.0186378,
+      "latitude": 49.341653,
+      "elevation_m": 149.6,
+      "smoothed_elevation_m": 150.9
+    },
+    {
+      "distance_m": 1200.0,
+      "longitude": -123.0186864,
+      "latitude": 49.3420717,
+      "elevation_m": 148.7,
+      "smoothed_elevation_m": 152.3
+    },
+    {
+      "distance_m": 1250.0,
+      "longitude": -123.0189092,
+      "latitude": 49.3424901,
+      "elevation_m": 155.1,
+      "smoothed_elevation_m": 152.5
+    },
+    {
+      "distance_m": 1277.0,
+      "longitude": -123.0191332,
+      "latitude": 49.342617,
+      "elevation_m": 156.8,
+      "smoothed_elevation_m": 153.5
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.5,
+      "slope": -0.0307,
+      "tobler_speed_kmh": 5.61,
+      "time_min": 0.53
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -0.8,
+      "slope": -0.0151,
+      "tobler_speed_kmh": 5.31,
+      "time_min": 0.57
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 150.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.7,
+      "slope": -0.0542,
+      "tobler_speed_kmh": 5.91,
+      "time_min": 0.51
+    },
+    {
+      "start_m": 150.0,
+      "end_m": 200.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.2,
+      "slope": -0.0436,
+      "tobler_speed_kmh": 5.87,
+      "time_min": 0.51
+    },
+    {
+      "start_m": 200.0,
+      "end_m": 250.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.4,
+      "slope": -0.0484,
+      "tobler_speed_kmh": 5.97,
+      "time_min": 0.5
+    },
+    {
+      "start_m": 250.0,
+      "end_m": 300.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.0,
+      "slope": -0.0401,
+      "tobler_speed_kmh": 5.79,
+      "time_min": 0.52
+    },
+    {
+      "start_m": 300.0,
+      "end_m": 350.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.6,
+      "slope": -0.0522,
+      "tobler_speed_kmh": 5.95,
+      "time_min": 0.5
+    },
+    {
+      "start_m": 350.0,
+      "end_m": 400.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.3,
+      "slope": -0.0464,
+      "tobler_speed_kmh": 5.93,
+      "time_min": 0.51
+    },
+    {
+      "start_m": 400.0,
+      "end_m": 450.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.1,
+      "slope": -0.0415,
+      "tobler_speed_kmh": 5.82,
+      "time_min": 0.52
+    },
+    {
+      "start_m": 450.0,
+      "end_m": 500.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.2,
+      "slope": -0.0231,
+      "tobler_speed_kmh": 5.46,
+      "time_min": 0.55
+    },
+    {
+      "start_m": 500.0,
+      "end_m": 550.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.1,
+      "slope": 0.0026,
+      "tobler_speed_kmh": 4.99,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 550.0,
+      "end_m": 600.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.6,
+      "slope": 0.0322,
+      "tobler_speed_kmh": 4.5,
+      "time_min": 0.67
+    },
+    {
+      "start_m": 600.0,
+      "end_m": 650.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 3.0,
+      "slope": 0.0609,
+      "tobler_speed_kmh": 4.07,
+      "time_min": 0.74
+    },
+    {
+      "start_m": 650.0,
+      "end_m": 700.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 3.2,
+      "slope": 0.0635,
+      "tobler_speed_kmh": 4.03,
+      "time_min": 0.74
+    },
+    {
+      "start_m": 700.0,
+      "end_m": 750.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 3.3,
+      "slope": 0.0655,
+      "tobler_speed_kmh": 4.0,
+      "time_min": 0.75
+    },
+    {
+      "start_m": 750.0,
+      "end_m": 800.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 3.3,
+      "slope": 0.0661,
+      "tobler_speed_kmh": 4.0,
+      "time_min": 0.75
+    },
+    {
+      "start_m": 800.0,
+      "end_m": 850.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.6,
+      "slope": 0.0528,
+      "tobler_speed_kmh": 4.19,
+      "time_min": 0.72
+    },
+    {
+      "start_m": 850.0,
+      "end_m": 900.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.6,
+      "slope": 0.0518,
+      "tobler_speed_kmh": 4.2,
+      "time_min": 0.71
+    },
+    {
+      "start_m": 900.0,
+      "end_m": 950.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.9,
+      "slope": 0.0576,
+      "tobler_speed_kmh": 4.12,
+      "time_min": 0.73
+    },
+    {
+      "start_m": 950.0,
+      "end_m": 1000.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.4,
+      "slope": 0.048,
+      "tobler_speed_kmh": 4.26,
+      "time_min": 0.7
+    },
+    {
+      "start_m": 1000.0,
+      "end_m": 1050.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.3,
+      "slope": 0.0257,
+      "tobler_speed_kmh": 4.6,
+      "time_min": 0.65
+    },
+    {
+      "start_m": 1050.0,
+      "end_m": 1100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.7,
+      "slope": 0.0146,
+      "tobler_speed_kmh": 4.79,
+      "time_min": 0.63
+    },
+    {
+      "start_m": 1100.0,
+      "end_m": 1150.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.5,
+      "slope": 0.0296,
+      "tobler_speed_kmh": 4.54,
+      "time_min": 0.66
+    },
+    {
+      "start_m": 1150.0,
+      "end_m": 1200.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.4,
+      "slope": 0.0281,
+      "tobler_speed_kmh": 4.56,
+      "time_min": 0.66
+    },
+    {
+      "start_m": 1200.0,
+      "end_m": 1250.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.2,
+      "slope": 0.0043,
+      "tobler_speed_kmh": 4.96,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 1250.0,
+      "end_m": 1277.0,
+      "distance_m": 27.0,
+      "elevation_change_m": 1.0,
+      "slope": 0.0367,
+      "tobler_speed_kmh": 4.43,
+      "time_min": 0.37
+    }
+  ]
+}

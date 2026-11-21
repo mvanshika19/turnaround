@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB00411",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00411"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 115.4,
+  "tobler_moving_time_min": 1.5,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.1170562,
+      "latitude": 49.3583296,
+      "elevation_m": 181.7,
+      "smoothed_elevation_m": 188.1
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.1164766,
+      "latitude": 49.3585483,
+      "elevation_m": 191.2,
+      "smoothed_elevation_m": 188.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.1158715,
+      "latitude": 49.3584972,
+      "elevation_m": 191.3,
+      "smoothed_elevation_m": 188.9
+    },
+    {
+      "distance_m": 115.4,
+      "longitude": -123.1156644,
+      "latitude": 49.358477,
+      "elevation_m": 191.2,
+      "smoothed_elevation_m": 191.2
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.8,
+      "slope": 0.0159,
+      "tobler_speed_kmh": 4.76,
+      "time_min": 0.63
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 115.4,
+      "distance_m": 15.4,
+      "elevation_change_m": 2.4,
+      "slope": 0.1554,
+      "tobler_speed_kmh": 2.92,
+      "time_min": 0.32
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB01331",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB01331"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 134.0,
+  "tobler_moving_time_min": 1.6,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0325468,
+      "latitude": 49.3160701,
+      "elevation_m": 19.4,
+      "smoothed_elevation_m": 20.2
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.0322338,
+      "latitude": 49.3164629,
+      "elevation_m": 20.4,
+      "smoothed_elevation_m": 20.6
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.0318254,
+      "latitude": 49.3168178,
+      "elevation_m": 20.9,
+      "smoothed_elevation_m": 20.6
+    },
+    {
+      "distance_m": 134.0,
+      "longitude": -123.0314921,
+      "latitude": 49.3170195,
+      "elevation_m": 21.6,
+      "smoothed_elevation_m": 21.0
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.3,
+      "slope": 0.007,
+      "tobler_speed_kmh": 4.92,
+      "time_min": 0.61
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 134.0,
+      "distance_m": 34.0,
+      "elevation_change_m": 0.4,
+      "slope": 0.0111,
+      "tobler_speed_kmh": 4.84,
+      "time_min": 0.42
+    }
+  ]
+}

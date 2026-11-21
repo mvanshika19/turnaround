@@ -1,0 +1,80 @@
+{
+  "trail": "BADEN POWELL",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00383",
+    "TRLPUB02162",
+    "TRLPUB02166",
+    "TRLPUB01914"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 140.5,
+  "tobler_moving_time_min": 1.9,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9365774,
+      "latitude": 49.3346541,
+      "elevation_m": 127.9,
+      "smoothed_elevation_m": 132.0
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9362555,
+      "latitude": 49.3350327,
+      "elevation_m": 132.6,
+      "smoothed_elevation_m": 134.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9360748,
+      "latitude": 49.3354273,
+      "elevation_m": 135.4,
+      "smoothed_elevation_m": 134.9
+    },
+    {
+      "distance_m": 140.5,
+      "longitude": -122.9361214,
+      "latitude": 49.3357792,
+      "elevation_m": 143.6,
+      "smoothed_elevation_m": 137.2
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.9,
+      "slope": 0.0583,
+      "tobler_speed_kmh": 4.11,
+      "time_min": 0.73
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 140.5,
+      "distance_m": 40.5,
+      "elevation_change_m": 2.3,
+      "slope": 0.0578,
+      "tobler_speed_kmh": 4.11,
+      "time_min": 0.59
+    }
+  ]
+}

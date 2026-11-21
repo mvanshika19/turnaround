@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB03709",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB03709"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 123.1,
+  "tobler_moving_time_min": 1.5,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.1916145,
+      "latitude": 49.3432003,
+      "elevation_m": 105.1,
+      "smoothed_elevation_m": 99.6
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.1909372,
+      "latitude": 49.3432536,
+      "elevation_m": 92.6,
+      "smoothed_elevation_m": 101.7
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.1902548,
+      "latitude": 49.3432153,
+      "elevation_m": 100.9,
+      "smoothed_elevation_m": 101.7
+    },
+    {
+      "distance_m": 123.1,
+      "longitude": -123.189941,
+      "latitude": 49.3431809,
+      "elevation_m": 108.0,
+      "smoothed_elevation_m": 100.5
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.1,
+      "slope": 0.042,
+      "tobler_speed_kmh": 4.35,
+      "time_min": 0.69
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 123.1,
+      "distance_m": 23.1,
+      "elevation_change_m": -1.2,
+      "slope": -0.0504,
+      "tobler_speed_kmh": 5.99,
+      "time_min": 0.23
+    }
+  ]
+}

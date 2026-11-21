@@ -1,0 +1,77 @@
+{
+  "trail": "SUMMIT TRAIL",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB03233-1"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 100.9,
+  "tobler_moving_time_min": 216.8,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.2608971,
+      "latitude": 49.3367578,
+      "elevation_m": 116.6,
+      "smoothed_elevation_m": 110.9
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.2603395,
+      "latitude": 49.3367526,
+      "elevation_m": 113.0,
+      "smoothed_elevation_m": 108.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.2598406,
+      "latitude": 49.3369543,
+      "elevation_m": 103.1,
+      "smoothed_elevation_m": 108.9
+    },
+    {
+      "distance_m": 100.9,
+      "longitude": -123.2598343,
+      "latitude": 49.336961,
+      "elevation_m": 102.9,
+      "smoothed_elevation_m": 106.3
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.0,
+      "slope": -0.0401,
+      "tobler_speed_kmh": 5.8,
+      "time_min": 0.52
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 100.9,
+      "distance_m": 0.9,
+      "elevation_change_m": -2.6,
+      "slope": -2.9385,
+      "tobler_speed_kmh": 0.0,
+      "time_min": 215.67
+    }
+  ]
+}

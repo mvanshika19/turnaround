@@ -1,0 +1,61 @@
+{
+  "trail": "ST ALBANS PARK",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00918"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 63.4,
+  "tobler_moving_time_min": 0.8,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0724007,
+      "latitude": 49.3511923,
+      "elevation_m": 329.1,
+      "smoothed_elevation_m": 334.7
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.0717567,
+      "latitude": 49.3513335,
+      "elevation_m": 336.6,
+      "smoothed_elevation_m": 334.7
+    },
+    {
+      "distance_m": 63.4,
+      "longitude": -123.0716106,
+      "latitude": 49.3514052,
+      "elevation_m": 338.3,
+      "smoothed_elevation_m": 334.7
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 63.4,
+      "distance_m": 13.4,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.16
+    }
+  ]
+}
