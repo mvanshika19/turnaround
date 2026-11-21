@@ -23,8 +23,7 @@ def get_trail_repository() -> TrailRepository:
 @lru_cache
 def get_planner() -> Planner:
     """Return the planner selected by ``TURNAROUND_PLANNER``."""
-    settings = get_settings()
-    return build_planner(settings.planner, settings.timezone)
+    return build_planner(get_settings())
 
 
 @lru_cache

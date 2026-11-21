@@ -21,7 +21,8 @@ class Settings(BaseSettings):
     environment: Literal["development", "production"] = "development"
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] = "INFO"
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
-    planner: DataSource = DataSource.MOCK
+    planner: DataSource = DataSource.MODEL
+    open_meteo_url: str = "https://api.open-meteo.com/v1/forecast"
     timezone: str = "America/Vancouver"
     data_dir: Path = DEFAULT_DATA_DIR
     openai_api_key: SecretStr | None = None

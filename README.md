@@ -68,7 +68,10 @@ Open http://localhost:5173. API docs are at http://localhost:8000/api/docs.
 | --- | --- | --- |
 | [Open-Meteo](https://open-meteo.com/) | Forecast, freezing level, sunset, elevation | None (free for non-commercial use) |
 | [OpenFreeMap](https://openfreemap.org/) | Map tiles | None |
+| District of North Vancouver, Trails for Public Use | Real trail routes (Lynn Peak, Grouse Grind); Open Government Licence – North Vancouver | None |
 | OpenAI API | AI co-pilot (later phase) | `TURNAROUND_OPENAI_API_KEY` in `backend/.env` |
+
+The backend's `ModelPlanner` uses the data scientists' trail profiles and their freezing-level forecast method.
 
 ## Data science tools: route weather forecast
 

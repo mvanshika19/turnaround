@@ -2,7 +2,9 @@ import type { LucideIcon } from 'lucide-react';
 import {
   CircleCheck,
   Clock,
+  CloudOff,
   Flashlight,
+  History,
   Info,
   Moon,
   MoonStar,
@@ -37,6 +39,8 @@ const REASON_ICONS = new Map<string, LucideIcon>([
   ['daylight_ok', Sun],
   ['snow_no_traction', Snowflake],
   ['snow_with_traction', Snowflake],
+  ['forecast_cached', History],
+  ['forecast_unavailable', CloudOff],
 ]);
 
 /** The icon for a reason code; unknown codes get a neutral info icon. */

@@ -23,7 +23,3 @@ class PlanNotFoundError(TurnaroundError):
 
 class CopilotDeadlineError(TurnaroundError):
     """Raised when one co-pilot request exceeds its overall time budget."""
-
-
-class PlannerNotImplementedError(TurnaroundError):
-    """Raised when the configured planner has no implementation yet."""
