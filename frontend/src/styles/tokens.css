@@ -1,0 +1,93 @@
+/*
+ * Design tokens: the only place colours, materials and shadows are defined.
+ * Light values live on :root. Dark values live on [data-theme='dark'], which ThemeProvider
+ * (and the inline script in index.html) set on <html>. Tailwind exposes them in index.css.
+ */
+
+:root {
+  color-scheme: light;
+
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --material: rgba(255, 255, 255, 0.78);
+
+  --label: #1d1d1f;
+  --label-secondary: #6e6e73;
+  --label-tertiary: #86868b;
+  --separator: rgba(0, 0, 0, 0.1);
+  --fill: rgba(120, 120, 128, 0.12);
+
+  --accent: #0071e3;
+  /* Filled buttons keep the deeper blue in both themes so white text stays above 4.5:1. */
+  --accent-fill: #0071e3;
+  --accent-fill-hover: #0066cc;
+  --on-accent: #ffffff;
+
+  /*
+   * *-text tokens reach WCAG AA (4.5:1) on --surface and on their own 14% pill tint. Light-mode
+   * go and danger are a shade darker than the brief's #248a3d / #d70015 to get there.
+   */
+  --go: #34c759;
+  --go-text: #217f38;
+  --caution: #ff9500;
+  --caution-text: #c93400;
+  --danger: #ff3b30;
+  --danger-text: #d50015;
+  --snow: #32ade6;
+  --snow-text: #0071a4;
+
+  /* Controls: segmented-control thumb, switch and slider knobs. */
+  --control-thumb: #ffffff;
+  --control-thumb-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
+  --knob: #ffffff;
+  --knob-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.16), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+
+  --panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shimmer: rgba(255, 255, 255, 0.55);
+
+  /* Map: casing under the trail line, and the shadow under the trailhead and top markers. */
+  --map-casing: #ffffff;
+  --marker-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #000000;
+  --surface: #1c1c1e;
+  --surface-raised: #2c2c2e;
+  --material: rgba(28, 28, 30, 0.78);
+
+  --label: #f5f5f7;
+  --label-secondary: #a1a1a6;
+  --label-tertiary: #8e8e93;
+  --separator: rgba(255, 255, 255, 0.12);
+  --fill: rgba(120, 120, 128, 0.24);
+
+  --accent: #2997ff;
+  --accent-fill: #0071e3;
+  --accent-fill-hover: #0066cc;
+  --on-accent: #ffffff;
+
+  --go: #30d158;
+  --go-text: #30d158;
+  --caution: #ff9f0a;
+  --caution-text: #ff9f0a;
+  --danger: #ff453a;
+  --danger-text: #ff6961;
+  --snow: #64d2ff;
+  --snow-text: #64d2ff;
+
+  --control-thumb: #636366;
+  --control-thumb-shadow: 0 3px 8px rgba(0, 0, 0, 0.24), 0 3px 1px rgba(0, 0, 0, 0.08);
+  --knob: #ffffff;
+  --knob-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+
+  --panel-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shimmer: rgba(255, 255, 255, 0.07);
+
+  --map-casing: #000000;
+  --marker-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}

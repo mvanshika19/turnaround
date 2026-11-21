@@ -1,0 +1,333 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+ * The type scale. These seven sizes are the only text sizes in the app: Tailwind's default
+ * sizes are removed so `text-display` … `text-caption` are the only `text-*` size utilities.
+ */
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter Variable', system-ui, sans-serif;
+
+  --text-*: initial;
+  --text-display: 2.75rem;
+  --text-display--line-height: 3rem;
+  --text-display--letter-spacing: -0.025em;
+  --text-display--font-weight: 600;
+  --text-title: 1.375rem;
+  --text-title--line-height: 1.75rem;
+  --text-title--letter-spacing: -0.02em;
+  --text-title--font-weight: 600;
+  --text-headline: 1.0625rem;
+  --text-headline--line-height: 1.375rem;
+  --text-headline--letter-spacing: -0.01em;
+  --text-headline--font-weight: 600;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.3125rem;
+  --text-body--letter-spacing: -0.005em;
+  --text-body--font-weight: 400;
+  --text-callout: 0.875rem;
+  --text-callout--line-height: 1.25rem;
+  --text-callout--letter-spacing: 0;
+  --text-callout--font-weight: 400;
+  --text-footnote: 0.8125rem;
+  --text-footnote--line-height: 1.125rem;
+  --text-footnote--letter-spacing: 0;
+  --text-footnote--font-weight: 400;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--letter-spacing: 0.01em;
+  --text-caption--font-weight: 500;
+
+  --radius-segment: 8px;
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --radius-panel: 22px;
+
+  --default-transition-duration: 250ms;
+  --default-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --color-*: initial;
+}
+
+/* Colours and shadows resolve to the theme-aware tokens in tokens.css. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-material: var(--material);
+  --color-label: var(--label);
+  --color-label-secondary: var(--label-secondary);
+  --color-label-tertiary: var(--label-tertiary);
+  --color-separator: var(--separator);
+  --color-fill: var(--fill);
+  --color-accent: var(--accent);
+  --color-accent-fill: var(--accent-fill);
+  --color-accent-fill-hover: var(--accent-fill-hover);
+  --color-on-accent: var(--on-accent);
+  --color-go: var(--go);
+  --color-go-text: var(--go-text);
+  --color-caution: var(--caution);
+  --color-caution-text: var(--caution-text);
+  --color-danger: var(--danger);
+  --color-danger-text: var(--danger-text);
+  --color-snow: var(--snow);
+  --color-snow-text: var(--snow-text);
+  --color-control-thumb: var(--control-thumb);
+  --color-knob: var(--knob);
+
+  --shadow-panel: var(--panel-shadow);
+  --shadow-control-thumb: var(--control-thumb-shadow);
+  --shadow-knob: var(--knob-shadow);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply min-h-dvh bg-bg font-sans text-body text-label antialiased;
+    font-variant-numeric: tabular-nums;
+    transition:
+      background-color 250ms,
+      color 250ms;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+}
+
+/* Frosted material for floating panels, with a solid surface where blur is unsupported. */
+@utility material {
+  background-color: var(--surface);
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    background-color: var(--material);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    backdrop-filter: saturate(180%) blur(24px);
+  }
+}
+
+/* Loading placeholder with a soft shimmer; static when reduced motion is requested. */
+@utility skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--fill);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, var(--shimmer), transparent);
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* The co-pilot's "Thinking…" ellipsis: each dot brightens in turn (static with reduced motion). */
+.thinking-dots > span {
+  animation: thinking 1.2s ease-in-out infinite;
+}
+
+.thinking-dots > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-dots > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes thinking {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
+
+@layer components {
+  /*
+   * Start-time slider: a native range input with an accent track and a white knob, inside a
+   * `.range-field` that shares the knob size with the sweep strip drawn under it.
+   * `--range-progress` (a length along the track) is set inline and drives the filled part.
+   */
+  .range-field {
+    --range-thumb: 28px;
+    --range-track: 4px;
+  }
+
+  .range-slider {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+    appearance: none;
+    touch-action: pan-y;
+  }
+
+  .range-slider:focus-visible {
+    outline: none;
+  }
+
+  .range-slider::-webkit-slider-runnable-track {
+    height: var(--range-track);
+    border-radius: 9999px;
+    background: linear-gradient(
+      to right,
+      var(--accent) var(--range-progress, 0%),
+      var(--fill) var(--range-progress, 0%)
+    );
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    width: var(--range-thumb);
+    height: var(--range-thumb);
+    margin-top: calc((var(--range-track) - var(--range-thumb)) / 2);
+    border: 0;
+    border-radius: 9999px;
+    background: var(--knob);
+    box-shadow: var(--knob-shadow);
+    appearance: none;
+    transition: transform 150ms;
+  }
+
+  .range-slider:active::-webkit-slider-thumb {
+    transform: scale(1.08);
+  }
+
+  .range-slider:focus-visible::-webkit-slider-thumb {
+    box-shadow:
+      var(--knob-shadow),
+      0 0 0 4px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+
+  .range-slider::-moz-range-track {
+    height: var(--range-track);
+    border-radius: 9999px;
+    background: var(--fill);
+  }
+
+  .range-slider::-moz-range-progress {
+    height: var(--range-track);
+    border-radius: 9999px;
+    background: var(--accent);
+  }
+
+  .range-slider::-moz-range-thumb {
+    width: var(--range-thumb);
+    height: var(--range-thumb);
+    border: 0;
+    border-radius: 9999px;
+    background: var(--knob);
+    box-shadow: var(--knob-shadow);
+    transition: transform 150ms;
+  }
+
+  .range-slider:active::-moz-range-thumb {
+    transform: scale(1.08);
+  }
+
+  .range-slider:focus-visible::-moz-range-thumb {
+    box-shadow:
+      var(--knob-shadow),
+      0 0 0 4px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+}
+
+/*
+ * Map overlays. These sit outside Tailwind's layers, and are scoped to `.trail-map`, so they win
+ * over maplibre-gl.css, which loads later with the map's chunk and is not layered.
+ */
+
+/* Trailhead and top markers (DOM markers, so they survive base-style swaps). */
+.trail-map .map-marker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.trail-map .map-marker__dot {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  box-shadow: var(--marker-shadow);
+}
+
+.trail-map .map-marker--trailhead .map-marker__dot {
+  background-color: var(--surface);
+  border: 3px solid var(--label);
+}
+
+.trail-map .map-marker--top .map-marker__dot {
+  background-color: var(--label);
+  border: 2px solid var(--surface);
+}
+
+.trail-map .map-marker__label {
+  @apply font-sans text-caption text-label;
+  white-space: nowrap;
+  text-shadow:
+    0 0 2px var(--surface),
+    0 0 2px var(--surface),
+    0 0 4px var(--surface);
+}
+
+/* The compact attribution control (required by OpenStreetMap), matched to the panels. */
+.trail-map .maplibregl-ctrl.maplibregl-ctrl-attrib {
+  @apply font-sans text-caption;
+  color: var(--label-secondary);
+  background-color: var(--material);
+}
+
+.trail-map .maplibregl-ctrl-attrib a {
+  color: inherit;
+}
+
+[data-theme='dark'] .trail-map .maplibregl-ctrl-attrib-button {
+  filter: invert(1);
+}
+
+.trail-map .maplibregl-cooperative-gesture-screen {
+  @apply font-sans text-body;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
