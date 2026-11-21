@@ -1,15 +1,18 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 import type { Feature, FeatureCollection, LineString } from 'geojson';
-import { LngLatBounds, MapLibreMap, Marker, setWorkerUrl } from 'maplibre-gl';
+import { LngLatBounds, MapLibreMap, Marker, Popup, setWorkerUrl } from 'maplibre-gl';
 import type {
   ExpressionSpecification,
   GeoJSONSource,
   LngLatLike,
+  MapMouseEvent,
+  PointLike,
   StyleSpecification,
 } from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 import type { SegmentStatus } from '@/api/types';
 import { cn } from '@/lib/cn';
@@ -38,7 +41,12 @@ const FIT_DURATION_MS = 900;
 /** If the base map hasn't loaded by then (blocked or throttled host), draw on a plain background. */
 const STYLE_TIMEOUT_MS = 8000;
 
+/** How close (in pixels) a click or hover must be to the route to pick a point. */
+const HIT_RADIUS_PX = 12;
+
 const SOURCE_ID = 'trail';
+const ACTIVE_SOURCE_ID = 'active-point';
+const ACTIVE_LAYER_ID = 'active-point';
 const CASING_LAYER_ID = 'trail-casing';
 const LINE_LAYER_ID = 'trail-line';
 
@@ -119,6 +127,65 @@ function addTrailLayers(map: MapLibreMap): void {
     layout: { 'line-cap': 'round', 'line-join': 'round' },
     paint: { 'line-color': lineColor, 'line-width': 5 },
   });
+  map.addSource(ACTIVE_SOURCE_ID, { type: 'geojson', data: activePointData(undefined) });
+  map.addLayer({
+    id: ACTIVE_LAYER_ID,
+    type: 'circle',
+    source: ACTIVE_SOURCE_ID,
+    paint: {
+      'circle-radius': 6,
+      'circle-color': token('--label'),
+      'circle-stroke-color': token('--surface'),
+      'circle-stroke-width': 2.5,
+    },
+  });
+}
+
+function activePointData(point: RoutePoint | undefined): FeatureCollection {
+  return {
+    type: 'FeatureCollection',
+    features: point
+      ? [
+          {
+            type: 'Feature',
+            properties: {},
+            geometry: { type: 'Point', coordinates: [point.lon, point.lat] },
+          },
+        ]
+      : [],
+  };
+}
+
+function drawActivePoint(map: MapLibreMap, point: RoutePoint | undefined): void {
+  void map.getSource<GeoJSONSource>(ACTIVE_SOURCE_ID)?.setData(activePointData(point));
+}
+
+/**
+ * The route point nearest a screen position, if the route passes within `HIT_RADIUS_PX` of it:
+ * the closer end of the nearest stretch, measured on screen.
+ */
+function pointNear(map: MapLibreMap, points: readonly RoutePoint[], at: PointLike): number | null {
+  const target = Array.isArray(at) ? { x: at[0], y: at[1] } : at;
+  let best: { index: number; distance: number } | null = null;
+  for (let index = 1; index < points.length; index += 1) {
+    const fromPoint = points[index - 1];
+    const toPoint = points[index];
+    if (!fromPoint || !toPoint) continue;
+    const a = map.project([fromPoint.lon, fromPoint.lat]);
+    const b = map.project([toPoint.lon, toPoint.lat]);
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const lengthSquared = dx * dx + dy * dy;
+    const t =
+      lengthSquared === 0
+        ? 0
+        : Math.min(Math.max(((target.x - a.x) * dx + (target.y - a.y) * dy) / lengthSquared, 0), 1);
+    const distance = Math.hypot(a.x + t * dx - target.x, a.y + t * dy - target.y);
+    if (distance <= HIT_RADIUS_PX && (!best || distance < best.distance)) {
+      best = { index: t < 0.5 ? index - 1 : index, distance };
+    }
+  }
+  return best?.index ?? null;
 }
 
 function drawRoute(map: MapLibreMap, points: readonly RoutePoint[]): void {
@@ -181,6 +248,10 @@ export function TrailMap({
   label,
   interactive = true,
   cooperativeGestures = false,
+  activeIndex = null,
+  onPointSelect,
+  popup,
+  onPopupClose,
   className,
 }: TrailMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -193,6 +264,10 @@ export function TrailMap({
   const fallbackRef = useRef(false);
   const styleTimerRef = useRef<number | undefined>(undefined);
   const [baseMapFailed, setBaseMapFailed] = useState(false);
+  const popupRef = useRef<Popup | null>(null);
+  /** Set while the popup is closed by code, so only a hiker's close reaches `onPopupClose`. */
+  const closingPopupRef = useRef(false);
+  const [popupNode] = useState(() => document.createElement('div'));
 
   const createMap = useEffectEvent((container: HTMLDivElement) => {
     styleThemeRef.current = theme;
@@ -217,6 +292,20 @@ export function TrailMap({
     styleReadyRef.current = true;
     if (!fallbackRef.current) setBaseMapFailed(false);
     drawRoute(map, points);
+    drawActivePoint(map, activeIndex === null ? undefined : points[activeIndex]);
+  });
+
+  const handleClick = useEffectEvent((map: MapLibreMap, event: MapMouseEvent) => {
+    onPointSelect?.(pointNear(map, points, event.point));
+  });
+
+  const handleHover = useEffectEvent((map: MapLibreMap, event: MapMouseEvent) => {
+    if (!onPointSelect) return;
+    map.getCanvas().style.cursor = pointNear(map, points, event.point) === null ? '' : 'pointer';
+  });
+
+  const handlePopupClose = useEffectEvent(() => {
+    if (!closingPopupRef.current) onPopupClose?.();
   });
 
   /** The base map failed or stalled: keep the route visible on a plain background instead. */
@@ -243,6 +332,23 @@ export function TrailMap({
     map.on('style.load', () => {
       handleStyleLoad(map);
     });
+    map.on('click', (event) => {
+      handleClick(map, event);
+    });
+    map.on('mousemove', (event) => {
+      handleHover(map, event);
+    });
+    const pointPopup = new Popup({
+      className: 'point-popup',
+      closeOnClick: false,
+      offset: 12,
+      // The card sizes itself; its time columns don't wrap.
+      maxWidth: 'none',
+    }).setDOMContent(popupNode);
+    pointPopup.on('close', () => {
+      handlePopupClose();
+    });
+    popupRef.current = pointPopup;
     // Errors before the style is ready mean the base map itself (style, sprite or glyphs) failed;
     // tile errors after that are left to MapLibre, which retries them.
     map.on('error', () => {
@@ -257,6 +363,10 @@ export function TrailMap({
     markersRef.current = markers;
 
     return () => {
+      closingPopupRef.current = true;
+      pointPopup.remove();
+      closingPopupRef.current = false;
+      popupRef.current = null;
       window.clearTimeout(styleTimerRef.current);
       markers.trailhead.remove();
       markers.top.remove();
@@ -268,7 +378,7 @@ export function TrailMap({
       fittedRef.current = null;
       fallbackRef.current = false;
     };
-  }, []);
+  }, [popupNode]);
 
   useEffect(() => {
     const handler = mapRef.current?.cooperativeGestures;
@@ -294,6 +404,28 @@ export function TrailMap({
     if (styleReadyRef.current) drawRoute(map, points);
     placeMarkers(map, markers, points);
   }, [points]);
+
+  const activePoint = activeIndex === null ? undefined : points[activeIndex];
+  const hasPopup = popup !== undefined && popup !== null;
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (map && styleReadyRef.current) drawActivePoint(map, activePoint);
+  }, [activePoint]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    const pointPopup = popupRef.current;
+    if (!map || !pointPopup) return;
+    if (hasPopup && activePoint) {
+      pointPopup.setLngLat([activePoint.lon, activePoint.lat]);
+      if (!pointPopup.isOpen()) pointPopup.addTo(map);
+    } else if (pointPopup.isOpen()) {
+      closingPopupRef.current = true;
+      pointPopup.remove();
+      closingPopupRef.current = false;
+    }
+  }, [hasPopup, activePoint]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -322,6 +454,7 @@ export function TrailMap({
           Base map unavailable
         </p>
       )}
+      {hasPopup && createPortal(popup, popupNode)}
     </div>
   );
 }

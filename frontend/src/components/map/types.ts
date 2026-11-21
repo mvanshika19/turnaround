@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import type { RoutePoint } from '@/lib/route';
 import type { ResolvedTheme } from '@/theme/themeContext';
 
@@ -24,5 +26,12 @@ export interface TrailMapProps {
    * doesn't trap the scroll gesture.
    */
   cooperativeGestures?: boolean;
+  /** Index into `points` of the point being inspected, drawn as a dot on the route. */
+  activeIndex?: number | null;
+  /** Makes the route clickable: called with the nearest point's index, or null for a miss. */
+  onPointSelect?: (index: number | null) => void;
+  /** Shown in a popup at the active point (when set); the popup's close button calls `onPopupClose`. */
+  popup?: ReactNode;
+  onPopupClose?: () => void;
   className?: string;
 }

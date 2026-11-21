@@ -1,7 +1,7 @@
 import type { HTMLMotionProps } from 'motion/react';
 import { useId } from 'react';
 
-import type { SegmentStatus } from '@/api/types';
+import type { PlanPoint, SegmentStatus } from '@/api/types';
 import { Panel } from '@/components/ui/Panel';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { cn } from '@/lib/cn';
@@ -16,12 +16,20 @@ const LEGEND_ORDER: readonly SegmentStatus[] = ['daylight', 'snow', 'dark'];
 interface ElevationPanelProps extends Omit<HTMLMotionProps<'section'>, 'children'> {
   points: readonly RoutePoint[] | undefined;
   snowLineM: number | null;
+  details: readonly PlanPoint[] | undefined;
+  activeIndex: number | null;
+  showCard: boolean;
+  onActiveIndexChange: (index: number | null) => void;
 }
 
 /** The elevation profile with its legend. On wide screens it fills a fixed-height bottom panel. */
 export function ElevationPanel({
   points,
   snowLineM,
+  details,
+  activeIndex,
+  showCard,
+  onActiveIndexChange,
   className,
   ...panelProps
 }: ElevationPanelProps) {
@@ -57,6 +65,10 @@ export function ElevationPanel({
         <ElevationProfile
           points={points}
           snowLineM={snowLineM}
+          details={details}
+          activeIndex={activeIndex}
+          showCard={showCard}
+          onActiveIndexChange={onActiveIndexChange}
           className="h-[140px] lg:h-auto lg:min-h-0 lg:flex-1"
         />
       ) : (

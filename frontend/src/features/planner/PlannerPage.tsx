@@ -25,6 +25,7 @@ import { CopilotPanel } from '@/features/copilot/components/CopilotPanel';
 import { useCopilot } from '@/features/copilot/hooks/useCopilot';
 
 import { ElevationPanel } from './components/ElevationPanel';
+import { PointDetails } from './components/PointDetails';
 import { PlanControlsPanel } from './components/PlanControlsPanel';
 import { ShareButton } from './components/ShareButton';
 import { VerdictPanel } from './components/VerdictPanel';
@@ -64,6 +65,13 @@ const NO_POINTS: readonly RoutePoint[] = [];
 /** Panels rise into place on first load. */
 const PANEL_ENTRANCE = { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 } };
 
+/** The route point being inspected, and where the hiker picked it (which decides where its card shows). */
+interface ActivePoint {
+  trailId: string;
+  index: number;
+  source: 'profile' | 'map';
+}
+
 export function PlannerPage() {
   useDocumentTitle();
   const { state, actions } = usePlannerState();
@@ -71,6 +79,7 @@ export function PlannerPage() {
   const { resolvedTheme } = useTheme();
   const isDesktop = useIsDesktop();
   const [copilotOpen, setCopilotOpen] = useState(false);
+  const [activePoint, setActivePoint] = useState<ActivePoint | null>(null);
   const copilot = useCopilot({
     context: data.planRequest,
     onSuggestion: (request) => {
@@ -85,6 +94,19 @@ export function PlannerPage() {
   const snowLineM =
     plan.data && plan.data.trail.id === route?.trailId ? plan.data.summary.snow_line_m : null;
   const hasNoTrails = trails.data?.length === 0;
+
+  // Times and conditions per point exist only when the route on screen comes from a plan.
+  const pointDetails =
+    plan.data && plan.data.trail.id === route?.trailId ? plan.data.points : undefined;
+  // A selection made on another trail's route no longer applies.
+  const active =
+    activePoint?.trailId === route?.trailId && pointDetails?.[activePoint?.index ?? -1]
+      ? activePoint
+      : null;
+  const activeDetails = active ? pointDetails?.[active.index] : undefined;
+  const selectPoint = (source: ActivePoint['source']) => (index: number | null) => {
+    setActivePoint(index === null || !route ? null : { trailId: route.trailId, index, source });
+  };
 
   const closeCopilot = () => {
     setCopilotOpen(false);
@@ -122,6 +144,16 @@ export function PlannerPage() {
         padding={isDesktop ? DESKTOP_MAP_PADDING : PHONE_MAP_PADDING}
         label={selectedTrail ? `Map of ${selectedTrail.name}` : 'Trail map'}
         cooperativeGestures={!isDesktop}
+        activeIndex={active?.index ?? null}
+        onPointSelect={pointDetails ? selectPoint('map') : undefined}
+        popup={
+          active?.source === 'map' && activeDetails ? (
+            <PointDetails point={activeDetails} className="pr-6" />
+          ) : null
+        }
+        onPopupClose={() => {
+          setActivePoint(null);
+        }}
         className="h-[42vh] shrink-0 lg:absolute lg:inset-0 lg:h-auto"
       />
       <main className="mx-auto flex w-full max-w-xl flex-col gap-4 px-4 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] lg:pointer-events-none lg:absolute lg:inset-x-0 lg:top-14 lg:bottom-0 lg:grid lg:w-auto lg:max-w-none lg:grid-cols-[var(--left-panel)_minmax(0,1fr)_var(--right-panel)] lg:grid-rows-[minmax(0,1fr)_auto] lg:gap-4 lg:p-4">
@@ -183,6 +215,10 @@ export function PlannerPage() {
               {...PANEL_ENTRANCE}
               points={route?.points}
               snowLineM={snowLineM}
+              details={pointDetails}
+              activeIndex={active?.index ?? null}
+              showCard={active?.source === 'profile'}
+              onActiveIndexChange={selectPoint('profile')}
               className="pointer-events-auto lg:col-start-2 lg:row-start-2 lg:h-(--bottom-panel) lg:w-full lg:max-w-3xl lg:justify-self-center"
             />
           </>
