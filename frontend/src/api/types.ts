@@ -42,6 +42,22 @@ export interface TrailSummary {
   summit: Coordinate;
   /** True when the route geometry is a placeholder. */
   is_sample: boolean;
+  opening_hours: OpeningHours | null;
+}
+
+export interface OpeningHours {
+  opens_at: LocalTime;
+  closes_at: LocalTime;
+  source_url: string;
+  note: string;
+}
+
+export interface OpeningCheck {
+  status: 'fits' | 'outside_hours' | 'unverified';
+  opens_at: LocalTime | null;
+  closes_at: LocalTime | null;
+  source_url: string | null;
+  message: string;
 }
 
 export interface Trail extends TrailSummary {
@@ -109,6 +125,7 @@ export interface PlanResponse {
   utc_offset: string;
   summary: PlanSummary;
   verdict: Verdict;
+  opening_check: OpeningCheck;
   points: PlanPoint[];
 }
 

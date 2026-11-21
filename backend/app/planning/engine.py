@@ -17,6 +17,8 @@ from app.contracts import (
     DataSource,
     Fitness,
     Gear,
+    OpeningCheck,
+    OpeningStatus,
     PlanPoint,
     PlanRequest,
     PlanResponse,
@@ -31,6 +33,7 @@ from app.contracts import (
     VerdictLevel,
 )
 from app.planning.identity import make_plan_id, summarize_trail
+from app.planning.opening_hours import check_opening_window
 from app.planning.timefmt import ceil_minutes, format_clock, whole_minutes
 
 SNOW_SPEED_MULTIPLIER: float = 0.7
@@ -80,6 +83,7 @@ class _Computation:
     finish_p90: datetime
     turnaround_by: datetime
     snow_line_m: int | None
+    opening_check: OpeningCheck
     verdict: Verdict
 
 
@@ -242,6 +246,7 @@ class PlanningEngine:
             utc_offset=_utc_offset(start),
             summary=summary,
             verdict=result.verdict,
+            opening_check=result.opening_check,
             points=points,
         )
 
@@ -289,6 +294,16 @@ class PlanningEngine:
             for index, point in enumerate(points)
         )
         snow_line_m = conditions.snow_line_m_between(start, eta_down_p90[0])
+        opening_check = check_opening_window(trail, start, eta_down_p90[0])
+        verdict = _build_verdict(start, conditions, eta_down_p90[0], gear, has_snow, snow_line_m)
+        if opening_check.status is OpeningStatus.OUTSIDE_HOURS:
+            verdict = Verdict(
+                level=VerdictLevel.NO_GO,
+                reasons=[
+                    *verdict.reasons,
+                    Reason(code="outside_opening_hours", level=VerdictLevel.NO_GO, message=opening_check.message),
+                ],
+            )
         return _Computation(
             start=start,
             eta_up=eta_up,
@@ -299,7 +314,8 @@ class PlanningEngine:
             finish_p90=eta_down_p90[0],
             turnaround_by=turnaround_by,
             snow_line_m=snow_line_m,
-            verdict=_build_verdict(start, conditions, eta_down_p90[0], gear, has_snow, snow_line_m),
+            opening_check=opening_check,
+            verdict=verdict,
         )
 
     @staticmethod
