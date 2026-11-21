@@ -90,6 +90,33 @@ class Coordinate(ContractModel):
     lon: float = Field(ge=-180, le=180)
 
 
+class OpeningHours(ContractModel):
+    """A conservative daily access window sourced from the land manager."""
+
+    opens_at: LocalTime
+    closes_at: LocalTime
+    source_url: str = Field(min_length=1)
+    note: str = Field(min_length=1)
+
+
+class OpeningStatus(StrEnum):
+    """Whether the proposed start through slow-day finish fits known access hours."""
+
+    FITS = "fits"
+    OUTSIDE_HOURS = "outside_hours"
+    UNVERIFIED = "unverified"
+
+
+class OpeningCheck(ContractModel):
+    """Result of checking a plan against known park access hours."""
+
+    status: OpeningStatus
+    opens_at: LocalTime | None = None
+    closes_at: LocalTime | None = None
+    source_url: str | None = None
+    message: str = Field(min_length=1)
+
+
 class TrailPoint(ContractModel):
     """One point on the outbound route, from trailhead to top."""
 
@@ -112,6 +139,9 @@ class TrailSummary(ContractModel):
     trailhead: Coordinate
     summit: Coordinate
     is_sample: bool = Field(description="True when the route geometry is a placeholder, not a surveyed path.")
+    opening_hours: OpeningHours | None = Field(
+        default=None, description="Known recurring park access hours; null when not verified."
+    )
 
 
 class Trail(TrailSummary):
@@ -193,6 +223,7 @@ class PlanResponse(ContractModel):
     utc_offset: str = Field(pattern=r"^[+-]\d{2}:\d{2}$", description="Vancouver's UTC offset on the plan date.")
     summary: PlanSummary
     verdict: Verdict
+    opening_check: OpeningCheck
     points: list[PlanPoint]
 
 

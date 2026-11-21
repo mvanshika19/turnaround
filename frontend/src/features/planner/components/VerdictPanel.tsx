@@ -1,4 +1,4 @@
-import { Unplug } from 'lucide-react';
+import { CircleCheck, CircleHelp, Clock3, ExternalLink, Unplug } from 'lucide-react';
 import type { HTMLMotionProps } from 'motion/react';
 import { useId } from 'react';
 
@@ -94,12 +94,43 @@ function VerdictContent({ plan, isStale, dimAtOnce }: VerdictContentProps) {
       </div>
       <TurnaroundTime time={summary.turnaround_by} />
       {verdict.reasons.length > 0 && <ReasonList reasons={verdict.reasons} />}
+      <OpeningHoursNotice plan={plan} />
       <MetricGrid>
         <MetricTile label="At the top" time={summary.top_eta} />
         <MetricTile label="Back, slow day" time={summary.finish_p90} />
         <MetricTile label="Sunset" time={summary.sunset} />
         <MetricTile label="Last light" time={summary.last_light} />
       </MetricGrid>
+    </div>
+  );
+}
+
+function OpeningHoursNotice({ plan }: { plan: PlanResponse }) {
+  const check = plan.opening_check;
+  const fits = check.status === 'fits';
+  const outside = check.status === 'outside_hours';
+  const tone = fits ? 'go' : outside ? 'danger' : 'neutral';
+  const Icon = fits ? CircleCheck : outside ? Clock3 : CircleHelp;
+
+  return (
+    <div className="flex flex-col gap-2 rounded-control bg-fill p-3">
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-callout font-medium">Park access hours</span>
+        <Pill tone={tone} icon={Icon}>
+          {fits ? 'Fits' : outside ? 'Outside hours' : 'Not verified'}
+        </Pill>
+      </div>
+      <p className="text-footnote text-label-secondary">{check.message}</p>
+      {check.source_url && (
+        <a
+          className="inline-flex w-fit items-center gap-1 text-footnote text-accent"
+          href={check.source_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official park information <ExternalLink aria-hidden className="size-3" />
+        </a>
+      )}
     </div>
   );
 }

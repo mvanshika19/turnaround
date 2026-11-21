@@ -15,6 +15,12 @@
     "lon": -123.019132
   },
   "is_sample": false,
+  "opening_hours": {
+    "opens_at": "07:00",
+    "closes_at": "17:00",
+    "source_url": "https://metrovancouver.org/services/regional-parks/Documents/lynn-headwaters-regional-park-brochure.pdf",
+    "note": "Conservative daily window based on Metro Vancouver's brochure: the park is usually open from 7 am to dusk, and its earliest posted gate closing time is 5 pm. Confirm the gate sign before setting out; temporary closures are not included."
+  },
   "points": [
     {
       "km": 0.0,
