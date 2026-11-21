@@ -1,0 +1,45 @@
+{
+  "trail": "SKYLINE TRAIL",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00401"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 40.8,
+  "tobler_moving_time_min": 0.5,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0792926,
+      "latitude": 49.3630468,
+      "elevation_m": 622.7,
+      "smoothed_elevation_m": 629.8
+    },
+    {
+      "distance_m": 40.8,
+      "longitude": -123.0789519,
+      "latitude": 49.3633223,
+      "elevation_m": 636.8,
+      "smoothed_elevation_m": 629.8
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 40.8,
+      "distance_m": 40.8,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.49
+    }
+  ]
+}

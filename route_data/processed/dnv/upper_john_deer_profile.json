@@ -1,0 +1,79 @@
+{
+  "trail": "UPPER JOHN DEER",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB04031",
+    "TRLPUB04029",
+    "TRLPUB04032"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 137.3,
+  "tobler_moving_time_min": 1.6,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9817287,
+      "latitude": 49.3359201,
+      "elevation_m": 392.6,
+      "smoothed_elevation_m": 393.3
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9810851,
+      "latitude": 49.3358496,
+      "elevation_m": 395.0,
+      "smoothed_elevation_m": 392.3
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9806182,
+      "latitude": 49.3355427,
+      "elevation_m": 392.1,
+      "smoothed_elevation_m": 392.3
+    },
+    {
+      "distance_m": 137.3,
+      "longitude": -122.9803652,
+      "latitude": 49.3353524,
+      "elevation_m": 389.5,
+      "smoothed_elevation_m": 392.2
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -0.9,
+      "slope": -0.0186,
+      "tobler_speed_kmh": 5.38,
+      "time_min": 0.56
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 137.3,
+      "distance_m": 37.3,
+      "elevation_change_m": -0.1,
+      "slope": -0.0025,
+      "tobler_speed_kmh": 5.08,
+      "time_min": 0.44
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "trail": "SEYMOUR GOLF",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00761"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 371.1,
+  "tobler_moving_time_min": 4.1,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9681645,
+      "latitude": 49.310302,
+      "elevation_m": 86.2,
+      "smoothed_elevation_m": 81.5
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9676334,
+      "latitude": 49.3100182,
+      "elevation_m": 81.2,
+      "smoothed_elevation_m": 79.5
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9670062,
+      "latitude": 49.3098587,
+      "elevation_m": 77.1,
+      "smoothed_elevation_m": 78.0
+    },
+    {
+      "distance_m": 150.0,
+      "longitude": -122.9664938,
+      "latitude": 49.3095625,
+      "elevation_m": 73.4,
+      "smoothed_elevation_m": 75.4
+    },
+    {
+      "distance_m": 200.0,
+      "longitude": -122.965981,
+      "latitude": 49.3093001,
+      "elevation_m": 71.9,
+      "smoothed_elevation_m": 73.8
+    },
+    {
+      "distance_m": 250.0,
+      "longitude": -122.9653076,
+      "latitude": 49.3092618,
+      "elevation_m": 73.6,
+      "smoothed_elevation_m": 72.7
+    },
+    {
+      "distance_m": 300.0,
+      "longitude": -122.9646328,
+      "latitude": 49.3093437,
+      "elevation_m": 73.0,
+      "smoothed_elevation_m": 72.9
+    },
+    {
+      "distance_m": 350.0,
+      "longitude": -122.9639468,
+      "latitude": 49.3093799,
+      "elevation_m": 71.8,
+      "smoothed_elevation_m": 73.2
+    },
+    {
+      "distance_m": 371.1,
+      "longitude": -122.9636561,
+      "latitude": 49.3093877,
+      "elevation_m": 74.3,
+      "smoothed_elevation_m": 73.0
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.0,
+      "slope": -0.0403,
+      "tobler_speed_kmh": 5.8,
+      "time_min": 0.52
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.5,
+      "slope": -0.0301,
+      "tobler_speed_kmh": 5.6,
+      "time_min": 0.54
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 150.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -2.5,
+      "slope": -0.0505,
+      "tobler_speed_kmh": 5.99,
+      "time_min": 0.5
+    },
+    {
+      "start_m": 150.0,
+      "end_m": 200.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.6,
+      "slope": -0.033,
+      "tobler_speed_kmh": 5.65,
+      "time_min": 0.53
+    },
+    {
+      "start_m": 200.0,
+      "end_m": 250.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.1,
+      "slope": -0.0212,
+      "tobler_speed_kmh": 5.43,
+      "time_min": 0.55
+    },
+    {
+      "start_m": 250.0,
+      "end_m": 300.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.2,
+      "slope": 0.0035,
+      "tobler_speed_kmh": 4.97,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 300.0,
+      "end_m": 350.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.2,
+      "slope": 0.0048,
+      "tobler_speed_kmh": 4.95,
+      "time_min": 0.61
+    },
+    {
+      "start_m": 350.0,
+      "end_m": 371.1,
+      "distance_m": 21.1,
+      "elevation_change_m": -0.1,
+      "slope": -0.0067,
+      "tobler_speed_kmh": 5.16,
+      "time_min": 0.25
+    }
+  ]
+}

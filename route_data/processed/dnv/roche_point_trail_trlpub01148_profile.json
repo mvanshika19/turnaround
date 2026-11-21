@@ -1,0 +1,77 @@
+{
+  "trail": "ROCHE POINT TRAIL",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB01148"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 117.4,
+  "tobler_moving_time_min": 1.4,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9599589,
+      "latitude": 49.3070963,
+      "elevation_m": 73.3,
+      "smoothed_elevation_m": 69.5
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9596156,
+      "latitude": 49.306717,
+      "elevation_m": 67.5,
+      "smoothed_elevation_m": 68.8
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9597356,
+      "latitude": 49.3063435,
+      "elevation_m": 67.6,
+      "smoothed_elevation_m": 68.8
+    },
+    {
+      "distance_m": 117.4,
+      "longitude": -122.9599249,
+      "latitude": 49.3062575,
+      "elevation_m": 66.6,
+      "smoothed_elevation_m": 67.2
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -0.7,
+      "slope": -0.0142,
+      "tobler_speed_kmh": 5.29,
+      "time_min": 0.57
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 117.4,
+      "distance_m": 17.4,
+      "elevation_change_m": -1.5,
+      "slope": -0.087,
+      "tobler_speed_kmh": 5.27,
+      "time_min": 0.2
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "trail": "SEYMOUR GOLF",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00694"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 188.4,
+  "tobler_moving_time_min": 2.4,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9636561,
+      "latitude": 49.3093877,
+      "elevation_m": 74.3,
+      "smoothed_elevation_m": 78.8
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9629731,
+      "latitude": 49.3094457,
+      "elevation_m": 79.9,
+      "smoothed_elevation_m": 80.0
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9622967,
+      "latitude": 49.3094741,
+      "elevation_m": 82.1,
+      "smoothed_elevation_m": 80.7
+    },
+    {
+      "distance_m": 150.0,
+      "longitude": -122.9616153,
+      "latitude": 49.3094151,
+      "elevation_m": 83.7,
+      "smoothed_elevation_m": 82.3
+    },
+    {
+      "distance_m": 188.4,
+      "longitude": -122.9610994,
+      "latitude": 49.3093508,
+      "elevation_m": 83.3,
+      "smoothed_elevation_m": 83.0
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.2,
+      "slope": 0.0247,
+      "tobler_speed_kmh": 4.62,
+      "time_min": 0.65
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.7,
+      "slope": 0.0133,
+      "tobler_speed_kmh": 4.81,
+      "time_min": 0.62
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 150.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.6,
+      "slope": 0.0318,
+      "tobler_speed_kmh": 4.51,
+      "time_min": 0.67
+    },
+    {
+      "start_m": 150.0,
+      "end_m": 188.4,
+      "distance_m": 38.4,
+      "elevation_change_m": 0.8,
+      "slope": 0.0205,
+      "tobler_speed_kmh": 4.69,
+      "time_min": 0.49
+    }
+  ]
+}

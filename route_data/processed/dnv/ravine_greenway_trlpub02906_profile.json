@@ -1,0 +1,93 @@
+{
+  "trail": "RAVINE GREENWAY",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB02906"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 161.2,
+  "tobler_moving_time_min": 2.1,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.089928,
+      "latitude": 49.3202802,
+      "elevation_m": 22.3,
+      "smoothed_elevation_m": 25.6
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.0894231,
+      "latitude": 49.3205073,
+      "elevation_m": 24.8,
+      "smoothed_elevation_m": 26.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.089352,
+      "latitude": 49.3209471,
+      "elevation_m": 29.6,
+      "smoothed_elevation_m": 27.7
+    },
+    {
+      "distance_m": 150.0,
+      "longitude": -123.0888105,
+      "latitude": 49.3211984,
+      "elevation_m": 30.9,
+      "smoothed_elevation_m": 29.1
+    },
+    {
+      "distance_m": 161.2,
+      "longitude": -123.0886927,
+      "latitude": 49.3212627,
+      "elevation_m": 30.9,
+      "smoothed_elevation_m": 30.5
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.3,
+      "slope": 0.0268,
+      "tobler_speed_kmh": 4.59,
+      "time_min": 0.65
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.8,
+      "slope": 0.016,
+      "tobler_speed_kmh": 4.76,
+      "time_min": 0.63
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 150.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 1.4,
+      "slope": 0.0271,
+      "tobler_speed_kmh": 4.58,
+      "time_min": 0.65
+    },
+    {
+      "start_m": 150.0,
+      "end_m": 161.2,
+      "distance_m": 11.2,
+      "elevation_change_m": 1.4,
+      "slope": 0.1275,
+      "tobler_speed_kmh": 3.22,
+      "time_min": 0.21
+    }
+  ]
+}

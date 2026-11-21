@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB00422",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00422"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 136.4,
+  "tobler_moving_time_min": 1.9,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.1131071,
+      "latitude": 49.3544826,
+      "elevation_m": 60.0,
+      "smoothed_elevation_m": 68.9
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.1129514,
+      "latitude": 49.3549194,
+      "elevation_m": 70.3,
+      "smoothed_elevation_m": 70.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.1126715,
+      "latitude": 49.3553297,
+      "elevation_m": 76.4,
+      "smoothed_elevation_m": 70.9
+    },
+    {
+      "distance_m": 136.4,
+      "longitude": -123.1124018,
+      "latitude": 49.3556048,
+      "elevation_m": 76.8,
+      "smoothed_elevation_m": 74.5
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 2.0,
+      "slope": 0.0393,
+      "tobler_speed_kmh": 4.39,
+      "time_min": 0.68
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 136.4,
+      "distance_m": 36.4,
+      "elevation_change_m": 3.6,
+      "slope": 0.0997,
+      "tobler_speed_kmh": 3.55,
+      "time_min": 0.61
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "trail": "Unnamed trail TRLPUB04331",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB04331"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 7.0,
+  "tobler_moving_time_min": 0.1,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0516303,
+      "latitude": 49.3458717,
+      "elevation_m": 284.6,
+      "smoothed_elevation_m": 284.4
+    },
+    {
+      "distance_m": 7.0,
+      "longitude": -123.0515349,
+      "latitude": 49.345869,
+      "elevation_m": 284.2,
+      "smoothed_elevation_m": 284.4
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 7.0,
+      "distance_m": 7.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.08
+    }
+  ]
+}

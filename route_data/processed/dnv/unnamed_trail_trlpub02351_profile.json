@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB02351",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB02351"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 133.5,
+  "tobler_moving_time_min": 1.6,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9520354,
+      "latitude": 49.3248071,
+      "elevation_m": 29.0,
+      "smoothed_elevation_m": 28.7
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9520159,
+      "latitude": 49.3243588,
+      "elevation_m": 29.0,
+      "smoothed_elevation_m": 28.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9520178,
+      "latitude": 49.3239092,
+      "elevation_m": 28.0,
+      "smoothed_elevation_m": 28.9
+    },
+    {
+      "distance_m": 133.5,
+      "longitude": -122.9520191,
+      "latitude": 49.3236081,
+      "elevation_m": 29.5,
+      "smoothed_elevation_m": 28.8
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.2,
+      "slope": 0.0038,
+      "tobler_speed_kmh": 4.97,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 133.5,
+      "distance_m": 33.5,
+      "elevation_change_m": -0.0,
+      "slope": -0.0013,
+      "tobler_speed_kmh": 5.06,
+      "time_min": 0.4
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "trail": "BEAULYNN PARK",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB00664"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 142.9,
+  "tobler_moving_time_min": 1.7,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0332524,
+      "latitude": 49.3242925,
+      "elevation_m": 86.5,
+      "smoothed_elevation_m": 86.5
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.0327752,
+      "latitude": 49.3246172,
+      "elevation_m": 85.1,
+      "smoothed_elevation_m": 87.3
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.0323512,
+      "latitude": 49.3249706,
+      "elevation_m": 88.0,
+      "smoothed_elevation_m": 87.3
+    },
+    {
+      "distance_m": 142.9,
+      "longitude": -123.0320336,
+      "latitude": 49.3252955,
+      "elevation_m": 89.4,
+      "smoothed_elevation_m": 87.5
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.7,
+      "slope": 0.0144,
+      "tobler_speed_kmh": 4.79,
+      "time_min": 0.63
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 142.9,
+      "distance_m": 42.9,
+      "elevation_change_m": 0.3,
+      "slope": 0.006,
+      "tobler_speed_kmh": 4.93,
+      "time_min": 0.52
+    }
+  ]
+}

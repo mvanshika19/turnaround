@@ -1,0 +1,11 @@
+[project]
+name = "turnaround"
+version = "0.1.0"
+description = "Weather and elevation tools for North Shore hiking plans."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "plotly",
+    "requests",
+    "tzdata",
+]

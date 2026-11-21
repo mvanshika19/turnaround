@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB01190",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB01190"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 131.9,
+  "tobler_moving_time_min": 1.6,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9774796,
+      "latitude": 49.3130733,
+      "elevation_m": 92.1,
+      "smoothed_elevation_m": 91.3
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.977109,
+      "latitude": 49.3127179,
+      "elevation_m": 90.3,
+      "smoothed_elevation_m": 91.4
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9764306,
+      "latitude": 49.3126786,
+      "elevation_m": 91.6,
+      "smoothed_elevation_m": 91.4
+    },
+    {
+      "distance_m": 131.9,
+      "longitude": -122.9759941,
+      "latitude": 49.3126943,
+      "elevation_m": 91.7,
+      "smoothed_elevation_m": 91.2
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.1,
+      "slope": 0.0018,
+      "tobler_speed_kmh": 5.0,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 131.9,
+      "distance_m": 31.9,
+      "elevation_change_m": -0.2,
+      "slope": -0.0067,
+      "tobler_speed_kmh": 5.16,
+      "time_min": 0.37
+    }
+  ]
+}

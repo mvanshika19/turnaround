@@ -1,0 +1,77 @@
+{
+  "trail": "Unnamed trail TRLPUB01047",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB01047"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 134.5,
+  "tobler_moving_time_min": 1.5,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -122.9562712,
+      "latitude": 49.3194744,
+      "elevation_m": 78.5,
+      "smoothed_elevation_m": 72.7
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -122.9557556,
+      "latitude": 49.3191839,
+      "elevation_m": 71.5,
+      "smoothed_elevation_m": 70.9
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -122.9554859,
+      "latitude": 49.3187728,
+      "elevation_m": 68.1,
+      "smoothed_elevation_m": 70.9
+    },
+    {
+      "distance_m": 134.5,
+      "longitude": -122.955217,
+      "latitude": 49.3185189,
+      "elevation_m": 65.3,
+      "smoothed_elevation_m": 68.3
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -1.8,
+      "slope": -0.0368,
+      "tobler_speed_kmh": 5.73,
+      "time_min": 0.52
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 134.5,
+      "distance_m": 34.5,
+      "elevation_change_m": -2.5,
+      "slope": -0.0735,
+      "tobler_speed_kmh": 5.53,
+      "time_min": 0.37
+    }
+  ]
+}

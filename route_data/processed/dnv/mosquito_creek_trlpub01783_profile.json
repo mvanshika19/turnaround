@@ -1,0 +1,77 @@
+{
+  "trail": "MOSQUITO CREEK",
+  "geometry_source": "District of North Vancouver, Trails for Public Use",
+  "geometry_source_url": "https://geoweb.dnv.org/data/index.php",
+  "geometry_asset_ids": [
+    "TRLPUB01783"
+  ],
+  "elevation_source": "Mapzen Terrain Tiles (Skadi)",
+  "elevation_source_url": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Contains information licensed under the Open Government Licence - North Vancouver.",
+  "notes": [
+    "Direction follows the generated line order. Walking time is a terrain-only estimate."
+  ],
+  "sample_spacing_m": 50,
+  "distance_m": 100.6,
+  "tobler_moving_time_min": 1.2,
+  "coordinates_order": "[longitude, latitude]",
+  "points": [
+    {
+      "distance_m": 0.0,
+      "longitude": -123.0888775,
+      "latitude": 49.3457661,
+      "elevation_m": 160.5,
+      "smoothed_elevation_m": 159.6
+    },
+    {
+      "distance_m": 50.0,
+      "longitude": -123.0882644,
+      "latitude": 49.3459119,
+      "elevation_m": 160.1,
+      "smoothed_elevation_m": 159.3
+    },
+    {
+      "distance_m": 100.0,
+      "longitude": -123.0876125,
+      "latitude": 49.3458738,
+      "elevation_m": 158.2,
+      "smoothed_elevation_m": 159.3
+    },
+    {
+      "distance_m": 100.6,
+      "longitude": -123.0876042,
+      "latitude": 49.3458756,
+      "elevation_m": 158.2,
+      "smoothed_elevation_m": 158.9
+    }
+  ],
+  "segments": [
+    {
+      "start_m": 0.0,
+      "end_m": 50.0,
+      "distance_m": 50.0,
+      "elevation_change_m": -0.4,
+      "slope": -0.007,
+      "tobler_speed_kmh": 5.16,
+      "time_min": 0.58
+    },
+    {
+      "start_m": 50.0,
+      "end_m": 100.0,
+      "distance_m": 50.0,
+      "elevation_change_m": 0.0,
+      "slope": 0.0,
+      "tobler_speed_kmh": 5.04,
+      "time_min": 0.6
+    },
+    {
+      "start_m": 100.0,
+      "end_m": 100.6,
+      "distance_m": 0.6,
+      "elevation_change_m": -0.4,
+      "slope": -0.6262,
+      "tobler_speed_kmh": 0.8,
+      "time_min": 0.05
+    }
+  ]
+}
